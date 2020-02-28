@@ -1,4 +1,6 @@
 var result = document.getElementById("result");
+var n1,n2
+var operacao
 
 function onNumberClicked(numberButton){
     
@@ -6,33 +8,64 @@ function onNumberClicked(numberButton){
         result.innerHTML = numberButton.innerHTML;
     }
     else{
-        result.innerHTML += numberButton.innerHTML;
+        result.innerHTML = result.innerHTML + numberButton.innerHTML;
     }
 }
 
+
+
 function onClearClicked(){
-    result.innerHTML = "0";
+    result.innerHTML="0"
+    n1=0 
+    n2=0 
+    
 }
 
 function onEqualsClicked(){
+    n2= parseInt(result.innerHTML)
+    if (operacao=="+"){
+        result.innerHTML= n1+n2
+    }
+    if(operacao=="-"){
+        result.innerHTML= n1-n2
+    }
+    if(operacao=="*"){
+        result.innerHTML= n1*n2
+    }
+    if(operacao=="/"){
+        
+        if(n2>0){
+            result.innerHTML= n1/n2
+        }
+        else{
+            alert ("Não divisivel por ZERO!")
+        }
+    }
+    
     
 }
 
 function onDivideClicked(){
-    //TODO implement this function
+    n1 = parseInt(result.innerHTML)
+    operacao="/"
+    result.innerHTML="0"
 }
-
-
-
-function onAddClicked(){
-    //TODO implement this function
-}
-
-function onSubtractClicked(){
-    //TODO implement this function
-}
-
-function onMultiplyCliked(){
-    //TODO implement this function
-}
-
+    
+    
+    function onSubtractClicked(){
+        n1 = parseInt(result.innerHTML)
+        operacao="-"
+        result.innerHTML="0"
+    }
+    
+    function onMultiplyClicked(){
+        n1 = parseInt(result.innerHTML)
+        operacao="*"
+        result.innerHTML="0"
+    }
+    
+    function onAddClicked(){
+        n1 = parseInt(result.innerHTML)
+        operacao="+"
+        result.innerHTML="0"
+    }
