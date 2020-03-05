@@ -45,11 +45,11 @@ function onEqualsClicked(){
     
 }
 
-function onDivideClicked(){
+    function onDivideClicked(){
     n1 = parseInt(result.innerHTML)
     operacao="/"
     result.innerHTML="0"
-}
+    }
     
     
     function onSubtractClicked(){
@@ -69,3 +69,29 @@ function onDivideClicked(){
         operacao="+"
         result.innerHTML="0"
     }
+    function onRaizClicked(){
+        n1 = parseInt(result.innerHTML)
+        operacao = "√"
+        result.innerHTML= n1*n1
+    }
+    function onSenClicked(){
+        n1 = parseInt(result.innerHTML)
+        operacao = "Sen"
+        result.innerHTML= Math.sin(n1)
+    }
+    function onCosClicked(){
+        n1 = parseInt(result.innerHTML)
+        operacao = "Cos"
+        result.innerHTML= Math.cos(n1)
+    }
+    function onFatorialClicked(){
+        n1 = parseInt(result.innerHTML)
+        operacao= "!*"
+        
+        for(i=0; i>1 ; i++) {
+            result.innerHTML= n1*n1-1        
+        }
+    }
+    
+    
+    
